@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#index.html" PATH="/index.html"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#index.html:0" NAME="item" PATH="/index.html" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="StudentSurveyPage::#StudentSurveyPage.xhtml"
+    NAME="output" PATH="/StudentSurveyPage.xhtml"
+    TARGET="rules:#StudentSurveyPage.xhtml" TITLE="StudentSurveyPage" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="ListSurvey::#ListSurvey.xhtml"
+    NAME="output1" PATH="/ListSurvey.xhtml"
+    TARGET="rules:#ListSurvey.xhtml" TITLE="ListSurvey" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#StudentSurveyPage.xhtml"
+  PATH="/StudentSurveyPage.xhtml" SHAPE="256,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#StudentSurveyPage.xhtml:0" NAME="item"
+   PATH="/StudentSurveyPage.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="index::#index.html" NAME="output"
+    PATH="/index.html" TARGET="rules:#index.html" TITLE="index" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="WinnerAcknowledgement::#WinnerAcknowledgement.xhtml"
+    NAME="output1" PATH="/WinnerAcknowledgement.xhtml"
+    TARGET="rules:#WinnerAcknowledgement.xhtml"
+    TITLE="WinnerAcknowledgement" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="SimpleAcknowledgement::#SimpleAcknowledgement.xhtml"
+    NAME="output2" PATH="/SimpleAcknowledgement.xhtml"
+    TARGET="rules:#SimpleAcknowledgement.xhtml"
+    TITLE="SimpleAcknowledgement" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#SimpleAcknowledgement.xhtml"
+  PATH="/SimpleAcknowledgement.xhtml" SHAPE="496,193,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#ListSurvey.xhtml" PATH="/ListSurvey.xhtml"
+  SHAPE="256,209,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#WinnerAcknowledgement.xhtml"
+  PATH="/WinnerAcknowledgement.xhtml" SHAPE="496,17,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

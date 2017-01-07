@@ -1,0 +1,130 @@
+
+
+.ui-widget, .ui-widget .ui-widget 
+{
+    font-size: 85%;
+}
+
+
+body 
+{
+	background-color:#F7F7F7;
+	font-family: 'Lucida Sans Unicode','Lucida Grande',Helvetica,Arial,sans-serif;
+	/* font-size:14px; */
+}
+
+/*
+.ui-panelgrid .ui-widget-content{
+    border: none;
+}
+
+.ui-datatable tbody td 
+{
+	text-overflow: ellipsis;
+}
+*/
+/*
+td
+{
+	font-family: 'Lucida Sans Unicode','Lucida Grande',Helvetica,Arial,sans-serif;
+	font-size:12px;
+}
+*/
+/*
+td
+{
+	font-family: 'Lucida Sans Unicode','Lucida Grande',Helvetica,Arial,sans-serif;
+	font-size:12px;
+	/* text-verflow:"ellipsis"; */
+}
+*/
+
+h2
+{
+	margin:10px;
+	padding:5px;
+	color:#404040;
+	font: normal 'Lucida Sans Unicode','Lucida Grande',Helvetica,Arial,sans-serif;
+	font-weight:bold;	
+}
+
+h3
+{
+	margin:10px;
+	padding:5px;
+	color:#404040;
+	font: normal 'Lucida Sans Unicode','Lucida Grande',Helvetica,Arial,sans-serif;
+	font-weight:bold;
+}
+
+label
+{
+	color:#404040;
+	font: normal 12px 'Lucida Sans Unicode','Lucida Grande',Helvetica,Arial,sans-serif;
+	font-weight:bold;
+}
+
+legend
+{
+	color:#404040;
+	font: normal 12px 'Lucida Sans Unicode','Lucida Grande',Helvetica,Arial,sans-serif;
+	font-weight:bold;
+}
+
+a
+{
+	font: normal 12px 'Lucida Sans Unicode','Lucida Grande',Helvetica,Arial,sans-serif;
+	font-weight:bold;
+	text-decoration:none;
+	color: #787878;
+	text-transform: uppercase;
+}
+
+input[type="checkbox"]
+{
+	color:#404040;
+	font: normal 12px 'Lucida Sans Unicode','Lucida Grande',Helvetica,Arial,sans-serif;
+	font-weight:bold;
+	text-shadow: 2px 2px 0px #38506b;
+}
+
+input[type="text"], input[type="password"], input[type="date"], input[type="tel"], input[type="email"]
+{
+	border: 2px solid #d9d9d9;
+	border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+	position:relative;
+	/*left:5px;*/
+}
+
+
+button
+{
+	background:none repeat scroll #333;
+	border:medium none;
+	color:White;
+	cursor:pointer;
+	display:inline-block;
+	font-size:10px;
+	line-height:15px;
+	margin-top:5px;
+	padding:2px 3px 1px;
+	text-align:center;
+	width:100px;
+	height:25px;
+	text-decoration:none;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	font-family: 'Lucida Sans Unicode','Lucida Grande',Helvetica,Arial,sans-serif;
+}
+
+button:hover
+{
+	background:#555;
+	border:medium none;
+	cursor:pointer;
+	color:White;
+	text-decoration:none;
+	font-family: 'Lucida Sans Unicode','Lucida Grande',Helvetica,Arial,sans-serif;
+}
+

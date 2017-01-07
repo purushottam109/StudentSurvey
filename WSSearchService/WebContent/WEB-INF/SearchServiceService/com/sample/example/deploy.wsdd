@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from SearchServiceService WSDL service -->
+
+  <service name="SearchService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://example.sample.com"/>
+      <parameter name="wsdlServiceElement" value="SearchServiceService"/>
+      <parameter name="schemaQualified" value="http://example.sample.com"/>
+      <parameter name="wsdlServicePort" value="SearchService"/>
+      <parameter name="className" value="com.sample.example.SearchService"/>
+      <parameter name="wsdlPortType" value="SearchService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://example.sample.com" xmlns:retNS="http://example.sample.com" xmlns:rtns="http://example.sample.com" xmlns:tns="http://example.sample.com" name="search" qname="operNS:search" returnQName="retNS:searchReturn" returnType="rtns:ArrayOf_xsd_anyType" returnItemQName="tns:item" soapAction="">
+        <parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" xmlns:pns="http://example.sample.com" qname="pns:fName" type="tns:string"/>
+        <parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" xmlns:pns="http://example.sample.com" qname="pns:lName" type="tns:string"/>
+        <parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" xmlns:pns="http://example.sample.com" qname="pns:city" type="tns:string"/>
+        <parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" xmlns:pns="http://example.sample.com" qname="pns:state" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="search"/>
+
+      <arrayMapping xmlns:ns="http://example.sample.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://example.sample.com" qname="ns:&gt;search" type="java:com.sample.example.Search" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://example.sample.com" qname="ns:&gt;searchResponse" type="java:com.sample.example.SearchResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

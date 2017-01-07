@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://example.sample.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://example.sample.com" xmlns:intf="http://example.sample.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://example.sample.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="search">
+    <complexType>
+     <sequence>
+      <element name="fName" type="xsd:string"/>
+      <element name="lName" type="xsd:string"/>
+      <element name="city" type="xsd:string"/>
+      <element name="state" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="searchResponse">
+    <complexType>
+     <sequence>
+      <element name="searchReturn" type="impl:ArrayOf_xsd_anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="searchRequest">
+
+      <wsdl:part element="impl:search" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="searchResponse">
+
+      <wsdl:part element="impl:searchResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="SearchService">
+
+      <wsdl:operation name="search">
+
+         <wsdl:input message="impl:searchRequest" name="searchRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:searchResponse" name="searchResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="SearchServiceSoapBinding" type="impl:SearchService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="search">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="searchRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="searchResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="SearchServiceService">
+
+      <wsdl:port binding="impl:SearchServiceSoapBinding" name="SearchService">
+
+         <wsdlsoap:address location="http://localhost:8080/WSSearchService/services/SearchService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

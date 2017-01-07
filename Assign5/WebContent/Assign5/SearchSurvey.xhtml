@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Insert title here</title>
+        <style>
+.surveyTable
+{
+   border-collapse:collapse;
+   border:1px solid #000000;
+}
+
+.surveyTableHeader
+{
+   text-align:center;
+   background:none repeat scroll 0 0 #B5B5B5;
+   border-bottom:1px solid #000000;  
+   padding:2px;
+}
+
+.surveyTableOddRow
+{
+   text-align:center;
+   background:none repeat scroll 0 0 #FFFFFFF;	
+}
+
+.surveyTableEvenRow
+{
+   text-align:center;
+   background:none repeat scroll 0 0 #D3D3D3;
+}
+	</style>
+    </h:head>
+    <h:body>
+    <h:form>
+    	<h:outputLabel value="First Name : " style="font-weight:bold" />
+        <p:autoComplete id="acFirstName" queryDelay="1000" value="#{studentSurvey.searchSurvey.firstName}" completeMethod="#{studentSurvey.completeSearchFirstName}" />
+        <br/>
+        <h:outputLabel value="Last Name : " style="font-weight:bold" />
+        <p:autoComplete id="acLastName" queryDelay="1000" value="#{studentSurvey.searchSurvey.lastName}" completeMethod="#{studentSurvey.completeSearchLastName}" />
+        <br/>
+        <h:outputLabel value="City : " style="font-weight:bold" />
+        <p:autoComplete id="acCity" queryDelay="1000" value="#{studentSurvey.searchSurvey.city}" completeMethod="#{studentSurvey.completeSearchCity}" />
+        <br/>
+        <h:outputLabel value="State : " style="font-weight:bold" />
+        <p:autoComplete id="acState" queryDelay="1000" value="#{studentSurvey.searchSurvey.state}" completeMethod="#{studentSurvey.completeSearchState}" />
+        <br />
+        <p:commandButton value="Search" actionListener="#{studentSurvey.searchData()}" ajax="false" />
+        <br />
+        <p:dataTable value="#{studentSurvey.searchSurveyList}" 
+					 var="survey">
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Id "/>
+				</f:facet>    				
+            	<h:outputText value="#{survey.id}">
+            	</h:outputText>
+         	</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value=" First Name "/>
+				</f:facet>    				
+            	<h:outputText value="#{survey.firstName}">
+            	</h:outputText>
+         	</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Last Name " />
+				</f:facet>
+            	<h:outputText value="#{survey.lastName}">
+            	</h:outputText>
+         	</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Street Address " />
+				</f:facet>
+            	<h:outputText value="#{survey.streetAddress}">
+            	</h:outputText>
+         	</p:column>
+			<p:column>
+				<f:facet name="header">
+					<h:outputText value=" City " />
+				</f:facet>
+            	<h:outputText value="#{survey.city}">
+            	</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" State " />
+				</f:facet>
+            	<h:outputText value="#{survey.state}">
+            	</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" ZipCode " />
+				</f:facet>
+            	<h:outputText value="#{survey.zipCode}">
+            	</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Telephone Number " />
+				</f:facet>
+            	<h:outputText value="#{survey.phoneNumber}">
+            	</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Email " />
+				</f:facet>
+            	<h:outputText value="#{survey.email}">
+            	</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Date of Survey " />
+				</f:facet>
+            	<h:outputText value="#{survey.surveyDate}">
+            		<f:convertDateTime type="date" pattern="MM/dd/yyyy"/>
+            	</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Likes about Campus " />
+				</f:facet>
+            	<h:outputText value="#{survey.campusLikes}">
+            	</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" How Interested " />
+				</f:facet>
+            	<h:outputText value="#{survey.howInterested}">
+            	</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Likelihood of Recommending " />
+				</f:facet>
+            	<h:outputText value="#{survey.likelihood}">
+            	</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Raffle " />
+				</f:facet>
+            	<h:outputText value="#{survey.raffle}">
+         		</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Comments " />
+				</f:facet>
+            	<h:outputText value="#{survey.comments}">
+            	</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Semester Start Date " />
+				</f:facet>
+            	<h:outputText value="#{survey.semStartDate}">
+            		<f:convertDateTime type="date" pattern="MM/dd/yyyy"/>
+            	</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Emergency Contact Name " />
+				</f:facet>
+            	<h:outputText value="#{survey.ecName}">
+            	</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Emergency Contact Tel No. " />
+				</f:facet>
+            	<h:outputText value="#{survey.ecTelNum}">
+            	</h:outputText>
+         	</p:column>
+         	<p:column>
+				<f:facet name="header">
+					<h:outputText value=" Emergency Contact Email " />
+				</f:facet>
+            	<h:outputText value="#{survey.ecEmail}">
+            	</h:outputText>
+         	</p:column>
+		</p:dataTable>
+    </h:form>
+    </h:body>
+</html>
